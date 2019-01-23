@@ -1,16 +1,20 @@
 body{
     color: white;
     background: #3F3F41;
+    font-family: serif;
+    margin-top: 50px;
 }
 
 #table{
-    width: 47%;
+    margin-left: 1%;
+    width: 46%;
     float: left;
     right: 0;
 }
 
 #input{
-    width: 47%;
+    margin-left: 1%;
+    width: 46%;
     float: left;
     left: 0;
 }
@@ -117,7 +121,7 @@ td{
 
 .u{
     z-index: 13;
-    top: -24px;
+    top: -23px;
     left: 14px;
     border: 1px solid #7CB437;
     width: 0;
