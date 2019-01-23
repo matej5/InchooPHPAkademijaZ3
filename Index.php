@@ -44,9 +44,15 @@
             echo '<tr>';
             for ($x = 0; $x < $b; $x++) {
                 if ($x === 0 && $y === 0) {
-                    echo '<td id="cellColor">', ($arr[$y][$x]['val']), '</td>';
+                    echo '<td id="cellColor"><div class="start"></div>', ($arr[$y][$x]['val']), '</td>';
                 } else {
-                    echo '<td id="cell">', ($arr[$y][$x]['val']), '</td>';
+                    ?>
+                    <td id="cell"> <?php echo $arr[$y][$x]['val'];
+                        if($arr[$y][$x]['l']) {echo '<div class="l"></div>';}
+                        if($arr[$y][$x]['r']) {echo '<div class="r"></div>';}
+                        if($arr[$y][$x]['u']) {echo '<div class="u"></div>';}
+                        if($arr[$y][$x]['d']) {echo '<div class="d"></div>';}
+                        ?> </td> <?php
                 }
             }
             echo '</tr>';

@@ -21,9 +21,13 @@ function spiralFill($a, $b)
             if($i+1 >= $b){
                 $arr[$k][$i]['l'] = true;
                 $arr[$k][$i]['d'] = true;
+                $arr[$k][$i]['u'] = false;
+                $arr[$k][$i]['r'] = false;
             }else {
                 $arr[$k][$i]['l'] = true;
                 $arr[$k][$i]['r'] = true;
+                $arr[$k][$i]['d'] = false;
+                $arr[$k][$i]['u'] = false;
             }
         }
         //smanjuje visinu za 1
@@ -35,9 +39,13 @@ function spiralFill($a, $b)
             if($i+1 == $a){
                 $arr[$i][$b-1]['u'] = true;
                 $arr[$i][$b-1]['l'] = true;
+                $arr[$i][$b-1]['d'] = false;
+                $arr[$i][$b-1]['r'] = false;
             }else {
                 $arr[$i][$b-1]['u'] = true;
                 $arr[$i][$b-1]['d'] = true;
+                $arr[$i][$b-1]['l'] = false;
+                $arr[$i][$b-1]['r'] = false;
             }
         }
         //smanjuje sirinu za 1
@@ -51,9 +59,13 @@ function spiralFill($a, $b)
                 if($i-1 < $l){
                     $arr[$a-1][$i]['u'] = true;
                     $arr[$a-1][$i]['r'] = true;
+                    $arr[$a-1][$i]['d'] = false;
+                    $arr[$a-1][$i]['l'] = false;
                 }else {
                     $arr[$a-1][$i]['l'] = true;
                     $arr[$a-1][$i]['r'] = true;
+                    $arr[$a-1][$i]['u'] = false;
+                    $arr[$a-1][$i]['d'] = false;
                 }
             }
             //smanjuje visinu za 1
@@ -68,9 +80,13 @@ function spiralFill($a, $b)
                 if($i-1 < $k){
                     $arr[$i][$l]['d'] = true;
                     $arr[$i][$l]['r'] = true;
+                    $arr[$i][$l]['u'] = false;
+                    $arr[$i][$l]['l'] = false;
                 }else {
                     $arr[$i][$l]['u'] = true;
                     $arr[$i][$l]['d'] = true;
+                    $arr[$i][$l]['l'] = false;
+                    $arr[$i][$l]['r'] = false;
                 }
             }
             //smanjuje sirinu za 1
