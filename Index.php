@@ -29,6 +29,7 @@ $arr = spiralFill($a, $b);
         }
         echo '</tr>';
     }
+
     ?>
 </table>
 </body>
