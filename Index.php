@@ -44,15 +44,15 @@
             echo '<tr>';
             for ($x = 0; $x < $b; $x++) {
                 if ($x === 0 && $y === 0) {
-                    echo '<td id="cellColor">', ($arr[$y][$x]), '</td>';
+                    echo '<td id="cellColor">', ($arr[$y][$x]['val']), '</td>';
                 } else {
-                    echo '<td id="cell">', ($arr[$y][$x]), '</td>';
+                    echo '<td id="cell">', ($arr[$y][$x]['val']), '</td>';
                 }
             }
             echo '</tr>';
         }
+        echo '</table>';
     }
-    echo '</table>';
     ?>
 </div>
 </body>
