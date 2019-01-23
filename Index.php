@@ -9,19 +9,24 @@
     <title>Document</title>
 </head>
 <body>
+<div id="rotate">INPUT</div>
 <div id="input">
-    <form method="post">
+    <form method="post" action="">
         Broj redaka
         <br>
-        <input type="text" name="a" placeholder="8">
+        <input type="text" name="a" placeholder="4" value="<?php if(isset($_POST['a'])){echo $_POST['a'];}?>" id="inp">
+        <br>
         <br>
         Broj stupaca
         <br>
-        <input type="text" name="b" placeholder="10">
+        <input type="text" name="b" placeholder="5" value="<?php if(isset($_POST['a'])){echo $_POST['b'];}?>" id="inp">
         <br>
-        <input type="submit" value="Create Table">
+        <br>
+        <br>
+        <input type="submit" value="KREIRAJ TABLICU" id="button">
     </form>
 </div>
+<div id="rotate">OUTPUT</div>
 <div id="table">
     <?php
     include_once 'function.php';

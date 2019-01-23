@@ -1,15 +1,16 @@
 body{
+    color: white;
     background: #3F3F41;
 }
 
 #table{
-    width: 40%;
+    width: 47%;
     float: left;
     right: 0;
 }
 
 #input{
-    width: 40%;
+    width: 47%;
     float: left;
     left: 0;
 }
@@ -19,7 +20,6 @@ body{
 }
 
 #cell{
-    color: white;
     text-align: center;
     width: 30px;
     height: 30px;
@@ -37,3 +37,30 @@ body{
     border-radius: 5px;
 }
 
+#rotate {
+    color: gray;
+    float: left;
+    width: 3%;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+}
+
+#button{
+    height: 30px;
+    width: 200px;
+    color: white;
+    text-align: center;
+    background: #7CB437;
+    border-radius: 5px;
+    border: none;
+}
+
+#inp{
+    text-align: center;
+    width: 120px;
+    height: 30px;
+    color: white;
+    background: gray;
+    border: 1px solid white;
+    border-radius: 5px;
+}
