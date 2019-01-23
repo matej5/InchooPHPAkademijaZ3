@@ -1,0 +1,18 @@
+#table{
+    border-collapse: collapse;
+}
+
+#cell{
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+}
+
+#cellColor{
+    background: gray;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+}
