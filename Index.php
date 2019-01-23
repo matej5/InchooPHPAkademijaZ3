@@ -9,28 +9,43 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-include_once 'function.php';
-
-$a = 7;
-$b = 4;
-$arr = spiralFill($a, $b);
-?>
-<table id="table">
+<div id="input">
+    <form method="post">
+        Broj redaka
+        <br>
+        <input type="text" name="a" placeholder="8">
+        <br>
+        Broj stupaca
+        <br>
+        <input type="text" name="b" placeholder="10">
+        <br>
+        <input type="submit" value="Create Table">
+    </form>
+</div>
+<div id="table">
     <?php
-    for ($y = 0; $y < $a; $y++) {
-        echo '<tr>';
-        for ($x = 0; $x < $b; $x++) {
-            if ($x === 0 && $y === 0) {
-                echo '<td id="cellColor">', ($arr[$y][$x]), '</td>';
-            } else {
-                echo '<td id="cell">', ($arr[$y][$x]), '</td>';
-            }
-        }
-        echo '</tr>';
-    }
-
+    include_once 'function.php';
+    if (isset($_POST['a']) && isset($_POST['b'])){
+    $a = $_POST['a'];
+    $b = $_POST['b'];
+    $arr = spiralFill($a, $b);
     ?>
-</table>
+    <table id="cells" cellspacing="0">
+        <?php
+        for ($y = 0; $y < $a; $y++) {
+            echo '<tr>';
+            for ($x = 0; $x < $b; $x++) {
+                if ($x === 0 && $y === 0) {
+                    echo '<td id="cellColor">', ($arr[$y][$x]), '</td>';
+                } else {
+                    echo '<td id="cell">', ($arr[$y][$x]), '</td>';
+                }
+            }
+            echo '</tr>';
+        }
+        }
+        ?>
+    </table>
+</div>
 </body>
 </html>
