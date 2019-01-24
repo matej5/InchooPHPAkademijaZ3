@@ -20,7 +20,6 @@ function spiralFill($a, $b)
 
     function isLast($val, $maxValue){
         if ($maxValue  === $val) {
-
             return true;
         }
         return false;
@@ -34,20 +33,13 @@ function spiralFill($a, $b)
             $arr[$k][$i]['val'] = $val++;
             if ($last) {
                 $arr[$k][$i]['l'] = true;
-                $arr[$k][$i]['d'] = false;
-                $arr[$k][$i]['u'] = false;
-                $arr[$k][$i]['r'] = false;
                 return $arr;
             } elseif ($i + 1 >= $b) {
                 $arr[$k][$i]['l'] = true;
                 $arr[$k][$i]['d'] = true;
-                $arr[$k][$i]['u'] = false;
-                $arr[$k][$i]['r'] = false;
             } else {
                 $arr[$k][$i]['l'] = true;
                 $arr[$k][$i]['r'] = true;
-                $arr[$k][$i]['d'] = false;
-                $arr[$k][$i]['u'] = false;
             }
             $last = isLast($val,$maxValue);
         }
@@ -58,21 +50,14 @@ function spiralFill($a, $b)
         for ($i = $k; $i < $a; ++$i) {
             $arr[$i][$b - 1]['val'] = $val++;
             if ($last) {
-                $arr[$k][$i]['l'] = false;
-                $arr[$k][$i]['d'] = false;
-                $arr[$k][$i]['u'] = true;
-                $arr[$k][$i]['r'] = false;
+                $arr[$i][$b -1]['u'] = true;
                 return $arr;
             } elseif ($i + 1 == $a) {
                 $arr[$i][$b - 1]['u'] = true;
                 $arr[$i][$b - 1]['l'] = true;
-                $arr[$i][$b - 1]['d'] = false;
-                $arr[$i][$b - 1]['r'] = false;
             } else {
                 $arr[$i][$b - 1]['u'] = true;
                 $arr[$i][$b - 1]['d'] = true;
-                $arr[$i][$b - 1]['l'] = false;
-                $arr[$i][$b - 1]['r'] = false;
             }
             $last = isLast($val,$maxValue);
         }
@@ -84,21 +69,14 @@ function spiralFill($a, $b)
             for ($i = $b - 1; $i >= $l; --$i) {
                 $arr[$a - 1][$i]['val'] = $val++;
                 if ($last) {
-                    $arr[$k][$i]['l'] = false;
-                    $arr[$k][$i]['d'] = false;
-                    $arr[$k][$i]['u'] = false;
-                    $arr[$k][$i]['r'] = true;
+                    $arr[$a-1][$i]['r'] = true;
                     return $arr;
                 } elseif ($i - 1 < $l) {
                     $arr[$a - 1][$i]['u'] = true;
                     $arr[$a - 1][$i]['r'] = true;
-                    $arr[$a - 1][$i]['d'] = false;
-                    $arr[$a - 1][$i]['l'] = false;
                 } else {
                     $arr[$a - 1][$i]['l'] = true;
                     $arr[$a - 1][$i]['r'] = true;
-                    $arr[$a - 1][$i]['u'] = false;
-                    $arr[$a - 1][$i]['d'] = false;
                 }
                 $last = isLast($val,$maxValue);
             }
@@ -111,21 +89,14 @@ function spiralFill($a, $b)
             for ($i = $a - 1; $i >= $k; --$i) {
                 $arr[$i][$l]['val'] = $val++;
                 if ($last) {
-                    $arr[$k][$i]['l'] = false;
-                    $arr[$k][$i]['d'] = true;
-                    $arr[$k][$i]['u'] = false;
-                    $arr[$k][$i]['r'] = false;
+                    $arr[$i][$l]['d'] = true;
                     return $arr;
                 } elseif ($i - 1 < $k) {
                     $arr[$i][$l]['d'] = true;
                     $arr[$i][$l]['r'] = true;
-                    $arr[$i][$l]['u'] = false;
-                    $arr[$i][$l]['l'] = false;
                 } else {
                     $arr[$i][$l]['u'] = true;
                     $arr[$i][$l]['d'] = true;
-                    $arr[$i][$l]['l'] = false;
-                    $arr[$i][$l]['r'] = false;
                 }
                 $last = isLast($val,$maxValue);
             }

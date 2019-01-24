@@ -48,10 +48,10 @@
                 } else {
                     ?>
                     <td id="cell"> <?php echo $arr[$y][$x]['val'];
-                        if($arr[$y][$x]['l']) {echo '<div class="l"></div>';}
-                        if($arr[$y][$x]['r']) {echo '<div class="r"></div>';}
-                        if($arr[$y][$x]['u']) {echo '<div class="u"></div>';}
-                        if($arr[$y][$x]['d']) {echo '<div class="d"></div>';}
+                        if(isset($arr[$y][$x]['l'])) {echo '<div class="l"></div>';}
+                        if(isset($arr[$y][$x]['r'])) {echo '<div class="r"></div>';}
+                        if(isset($arr[$y][$x]['u'])) {echo '<div class="u"></div>';}
+                        if(isset($arr[$y][$x]['d'])) {echo '<div class="d"></div>';}
                         ?> </td> <?php
                 }
             }

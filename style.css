@@ -25,6 +25,7 @@ body{
 }
 
 #cell{
+    position: center;
     text-align: center;
     vertical-align: middle;
     width: 30px;
@@ -121,10 +122,10 @@ td{
 
 .u{
     z-index: 13;
-    top: -23px;
-    left: 14px;
+    top: 0;
+    left: 15px;
     border: 1px solid #7CB437;
     width: 0;
     height: 2px;
-    position: relative;
+    position: absolute;
 }
