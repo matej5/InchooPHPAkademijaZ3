@@ -18,13 +18,6 @@ function spiralFill($a, $b)
     //posljednji clan
     $last = false;
 
-    function isLast($val, $maxValue){
-        if ($maxValue  === $val) {
-            return true;
-        }
-        return false;
-    }
-
     while ($k < $a && $l < $b) {
         //provjera dali je zadnji clan
 
@@ -41,7 +34,7 @@ function spiralFill($a, $b)
                 $arr[$k][$i]['l'] = true;
                 $arr[$k][$i]['r'] = true;
             }
-            $last = isLast($val,$maxValue);
+            $last = ($maxValue  === $val)? true : false;
         }
         //smanjuje visinu za 1
         $k++;
@@ -59,7 +52,7 @@ function spiralFill($a, $b)
                 $arr[$i][$b - 1]['u'] = true;
                 $arr[$i][$b - 1]['d'] = true;
             }
-            $last = isLast($val,$maxValue);
+            $last = ($maxValue  === $val)? true : false;
         }
         //smanjuje sirinu za 1
         $b--;
@@ -78,7 +71,7 @@ function spiralFill($a, $b)
                     $arr[$a - 1][$i]['l'] = true;
                     $arr[$a - 1][$i]['r'] = true;
                 }
-                $last = isLast($val,$maxValue);
+                $last = ($maxValue  === $val)? true : false;
             }
             //smanjuje visinu za 1
             $a--;
@@ -98,7 +91,7 @@ function spiralFill($a, $b)
                     $arr[$i][$l]['u'] = true;
                     $arr[$i][$l]['d'] = true;
                 }
-                $last = isLast($val,$maxValue);
+                $last = ($maxValue  === $val)? true : false;
             }
             //smanjuje sirinu za 1
             $l++;
